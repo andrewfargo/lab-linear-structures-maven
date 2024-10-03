@@ -19,9 +19,21 @@ public class StringUtils {
   /**
    * Determine whether the parens match in string.
    */
-  public static boolean checkMatching(String str) {
+  public static boolean checkMatching(String str) throws Exception {
     Stack<Character> parens = new LinkedStack<Character>();
-    return false;       // STUB
+    for (char c : str.toCharArray()) {
+      if (c == '(') {
+        parens.put(c);
+      } else if (c == ')') {
+        try {
+          parens.pop();
+        } catch (Exception e) {
+          return false;
+        }
+      } // else if
+    } // for
+
+    return parens.isEmpty();
   } // checkMatching
 } // class StringUtils    
 
