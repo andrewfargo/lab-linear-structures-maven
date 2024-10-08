@@ -19,10 +19,8 @@ public class MatchingExperiments {
    * A single experiment with checkMatching.
    */
   static void checkMatchingExperiment(PrintWriter pen, String str) {
-    pen.print("checkMatching(\"" + str + "\") = ");
-    pen.flush();
     try {
-      pen.println(StringUtils.checkMatching(str));
+      StringUtils.printMatching(str);
     } catch (Exception e) {
       pen.println("*** ERROR *** " + e.toString());
     } // try/catch
@@ -44,7 +42,7 @@ public class MatchingExperiments {
     checkMatchingExperiment(pen, "((((((((a))))))))");
     checkMatchingExperiment(pen, "((((((((a)))))]))");
     checkMatchingExperiment(pen, "(([((((((a)))))]))");
-    checkMatchingExperiment(pen, "(([((((((a))))))])");
+    checkMatchingExperiment(pen, "((([((((((a))))))])");
     checkMatchingExperiment(pen, "((((b)(((((a)(c)))(d))))))");
     // Feel free to add your own
   } // checkMatchingExperiments()
