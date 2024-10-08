@@ -55,7 +55,7 @@ public class ReportingLinearStructure<T> implements LinearStructure<T> {
    * comments to stdout using no prefix.
    */
   public ReportingLinearStructure(LinearStructure<T> ls) {
-    this(ls, new PrintWriter(System.out, true), "");
+    this(ls, new PrintWriter(System.err, true), ls.getClass().getSimpleName() + ".");
   } // ReportingLinearStructure(LinearStructure<T>)
 
   // +-------------------------+-----------------------------------------

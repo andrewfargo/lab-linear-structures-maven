@@ -15,7 +15,7 @@ public class ArrayBasedQueueExperiment {
    */
   public static void main(String[] args) throws Exception {
     ReportingLinearStructure<String> expt =
-        new ReportingLinearStructure<String>(new ArrayBasedQueue<String>(4), "expt.");
+        new ReportingLinearStructure<String>(new ArrayBasedQueue<String>(4));
     // Put in a few values, then remove two
     expt.isEmpty();
     expt.put("a");
