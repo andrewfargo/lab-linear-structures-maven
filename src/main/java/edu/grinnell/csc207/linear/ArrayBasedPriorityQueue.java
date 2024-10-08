@@ -70,7 +70,13 @@ public class ArrayBasedPriorityQueue<T> implements PriorityQueue<T> {
     if (this.isFull()) {
       throw new Exception("no more room!");
     } // this.isFull()
-    this.values[this.size++] = val;
+    for (int i = this.size; i >= 1; i--) {
+      this.values[i] = this.values[i-1];
+    }
+    this.values[0] = val;
+    size++;
+    //  Bubble through the array
+    
   } // put(T)
 
   @Override
@@ -78,7 +84,13 @@ public class ArrayBasedPriorityQueue<T> implements PriorityQueue<T> {
     if (this.isEmpty()) {
       throw new Exception("empty");
     } // if empty
-    // STUB! Needs reimplmentation.
+    for (int i = 0; i < this.size - 1; i++) {
+      if (this.order.compare(this.values[i], this.values[i+1]) < 0) {
+        T temp = this.values[i];
+        this.values[i] = this.values[i+1];
+        this.values[i+1] = temp;
+      } // if
+    } // for i
     return this.values[--this.size];
   } // get(T)
 
@@ -87,6 +99,13 @@ public class ArrayBasedPriorityQueue<T> implements PriorityQueue<T> {
     if (this.isEmpty()) {
       throw new Exception("empty");
     } // if empty
+    for (int i = 0; i < this.size - 1; i++) {
+      if (this.order.compare(this.values[i], this.values[i+1]) < 0) {
+        T temp = this.values[i];
+        this.values[i] = this.values[i+1];
+        this.values[i+1] = temp;
+      } // if
+    } // for i
     return this.values[this.size - 1];
   } // peek()
 

@@ -38,10 +38,10 @@ public class PriorityQueueExperiment {
     PriorityQueue<String> pq;
     // Uncomment one of the following to choose the kind of
     // priority queue.
-    pq = new BuiltinPriorityQueue<String>(8, compareLengths);
+    pq = new ArrayBasedPriorityQueue<String>(8, compareLengths);
     // pq = new ArrayBasedPriorityQueue<String>(8, compareLengths);
 
-    ReportingLinearStructure<String> expt = new ReportingLinearStructure<String>(pq, "expt");
+    ReportingLinearStructure<String> expt = new ReportingLinearStructure<String>(pq, "expt.");
 
     // Put in a few values, then remove two
     expt.isEmpty();
