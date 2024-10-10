@@ -151,7 +151,7 @@ class ArrayBasedQueueIterator<T> implements Iterator<T> {
     if (!this.hasNext()) {
       throw new NoSuchElementException("no elements remain");
     } // if no elements
-    return this.abq.values[(i+this.abq.front)%this.abq.values.length];
+    return this.abq.values[((i++)+this.abq.front)%this.abq.values.length];
   } // next()
 
   @Override
@@ -161,6 +161,6 @@ class ArrayBasedQueueIterator<T> implements Iterator<T> {
 
   @Override
   public void remove() throws UnsupportedOperationException {
-    throw new UnsupportedOperationException();
+    
   } // remove()
 } // ArrayBasedQueueIterator<T>
