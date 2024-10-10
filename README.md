@@ -5,6 +5,7 @@ Authors:
 * Samuel A. Rebelsky
 * Jake Bell
 * Andrew Fargo
+* Tiffany Tang
 
 The latest version of the CSC-207 lab on linear structures, now with Maven.
 
